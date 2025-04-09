@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gold Coins Test</title>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Coin Test</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            background-color: pink;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+        }
+        model-viewer {
+            display: block;
+            margin: 0 auto;
+            width: 60vw;
+            height: 60vh;
+        }
+    </style>
+</head>
 <body>
-<H2>Gold Coins Test</H2>
-<model-viewer src="GoldCoins.glb"
-ios-src="GoldCoins.usdz"
-alt="Titos Cave"
-ar
-auto-rotate
-camera-controls
-ar-modes="webxr scene-viewer quick-look"
-environment-image="neutral">
-</model-viewer>
-<script>
-async function checkARCoreCompatibility() {
-const modelViewer = document.getElementById('model-viewer');
-const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-if (!isARCoreSupported) {
-modelViewer.removeAttribute('ar');
-modelViewer.removeAttribute('ar-modes');
-alert('Your device is not compatible with AR features. You can still view the 3D model.');
-}
-}
-
-    document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);  
-</script>  
-
+    <h2>Gold Coin Test</h2>
+    <model-viewer src="GoldCoins.glb"
+                  ios-src="GoldCoins.udsz"
+                  alt="GoldCoins"
+                  ar
+                  auto-rotate
+                  camera-controls
+                  ar-modes="webxr scene-viewer quick-look"
+                  environment-image="neutral">
+    </model-viewer>
 </body>
 </html>
