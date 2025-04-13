@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gold Coins Test</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
-
     body {
       background-color: white;
       margin: 0;
@@ -18,48 +16,73 @@
       min-height: 100vh;
       padding: 20px;
     }
+    model-viewer {
+      display: block;
+      margin: 30px 0; /* Abstand zwischen den Modellen */
+      width: 60vw;
+      height: 60vh;
+    }
     h2 {
       text-align: center;
       font-family: Arial, sans-serif;
-      color: white;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px black;
-      font-size: 1.5em; /* Zurück auf 1.5em */
-      margin-top: 90px; /* Angepasster Abstand zum oberen Rand */
-      margin-bottom: 20px;
-    }
-    model-viewer {
-      display: block;
-      margin: 20px auto;
-      width: 65vw;  /* Modell kleiner gemacht */
-      height: 65vh; /* Modell kleiner gemacht */
-    }
-    p {
-      text-align: center;
-      font-family: 'Arial'
-      font-size: 1.5em;
       color: black;
-      max-width: 800px;
-      margin-top: 40px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
+
 <body>
   <h2>Gold Coins Test</h2>
+
   <model-viewer 
-    src="Gold_Coins_größer.glb"
-    ios-src="Gold_Coins_größer.usdz"
-    alt="Gold Coins"
+    src="Coins_Turm.glb"
+    ios-src="Coins_Turm.usdz"
+    alt="Coins Turm"
     ar
     auto-rotate
     camera-controls
     camera-orbit="0deg 90deg 1m"
     field-of-view="30deg"
-    ar-modes="webxr scene-viewer quick-look"
     environment-image="neutral">
   </model-viewer>
-  <p>
-   Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks on Stacks
-  </p>
+
+  <model-viewer 
+    src="Coin_Strasse.glb"
+    ios-src="Coin_Strasse.usdz"
+    alt="Coin Strasse"
+    ar
+    auto-rotate
+    camera-controls
+    camera-orbit="0deg 90deg 1m"
+    field-of-view="30deg"
+    environment-image="neutral">
+  </model-viewer>
+
+  <model-viewer 
+    src="BunkerCoins.glb"
+    ios-src="BunkerCoins.usdz"
+    alt="Bunker Coins"
+    ar
+    auto-rotate
+    camera-controls
+    camera-orbit="0deg 90deg 1m"
+    field-of-view="30deg"
+    environment-image="neutral">
+  </model-viewer>
+
+  <model-viewer 
+    src="Coin_Kreis.glb"
+    ios-src="Coin_Kreis.usdz"
+    alt="Coin Kreis"
+    ar
+    auto-rotate
+    camera-controls
+    camera-orbit="0deg 90deg 1m"
+    field-of-view="30deg"
+    environment-image="neutral">
+  </model-viewer>
+
 </body>
 </html>
