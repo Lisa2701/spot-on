@@ -10,25 +10,22 @@
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
 
     body {
-      /* Hintergrundbild + Fallback-Farbe */
-      background-color: #b0b0b0; /* Fallback Grau */
-      background-image: url(Beton.jpg);
+      background-color: #b0b0b0;
+      background-image: url(Beton);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
 
-      /* Dunkel-Filter optional */
       position: relative;
       margin: 0;
       min-height: 100vh;
       padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* damit Titel links bleibt */
       justify-content: flex-start;
     }
 
-    /* Dunkler Overlay (optional) */
     body::before {
       content: "";
       position: absolute;
@@ -36,29 +33,36 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.2); /* Schwarz mit 20% Deckkraft */
+      background: rgba(0, 0, 0, 0.2);
       z-index: 0;
     }
 
     h2, p, model-viewer {
-      position: relative; /* damit alles über dem Overlay sichtbar bleibt */
+      position: relative;
       z-index: 1;
     }
 
     h2 {
-      text-align: center;
+      text-align: left; /* linksbündig */
       font-family: Arial, sans-serif;
       color: black;
       font-weight: bold;
-      font-size: 2em;
-      margin-top: 50px;
-      margin-bottom: 20px;
+      font-size: 3em; /* größer gemacht */
+      margin: 20px 0 40px 20px; /* oben, rechts, unten, links */
+    }
+
+    .models-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* damit die Modelle auch linksbündig starten */
+      padding-left: 100px; /* Abstand von links (verschiebt alles nach rechts) */
+      width: 100%;
     }
 
     model-viewer {
       display: block;
-      margin: 20px auto;
-      width: 40vw; 
+      margin: 20px 0;
+      width: 40vw;
       height: 40vh;
     }
 
@@ -68,7 +72,7 @@
       font-size: 1.2em;
       color: black;
       max-width: 800px;
-      margin-top: 40px;
+      margin: 40px auto 0 auto; /* zentriert */
     }
   </style>
 </head>
@@ -76,64 +80,66 @@
 <body>
   <h2>Bunker Coins</h2>
 
-  <!-- Erstes Modell -->
-  <model-viewer 
-    src="Coins_Turm_final.glb"
-    ios-src="Coins_Turm_final.usdz"
-    alt="Coins Turm final"
-    ar
-    autoplay
-    auto-rotate
-    camera-controls
-    camera-orbit="0deg 90deg 1m"
-    field-of-view="30deg"
-    environment-image="neutral">
-  </model-viewer>
+  <div class="models-container">
+    <!-- Erstes Modell -->
+    <model-viewer 
+      src="Coins_Turm_final.glb"
+      ios-src="Coins_Turm_final.usdz"
+      alt="Coins Turm final"
+      ar
+      autoplay
+      auto-rotate
+      camera-controls
+      camera-orbit="0deg 90deg 1m"
+      field-of-view="30deg"
+      environment-image="neutral">
+    </model-viewer>
 
-  <!-- Zweites Modell -->
-  <model-viewer 
-    src="Coin_Strasse_final.glb"
-    ios-src="Coin_Strasse_final.usdz"
-    alt="Coin Strasse final"
-    ar
-    autoplay
-    auto-rotate
-    camera-controls
-    camera-orbit="0deg 90deg 1m"
-    field-of-view="30deg"
-    environment-image="neutral">
-  </model-viewer>
+    <!-- Zweites Modell -->
+    <model-viewer 
+      src="Coin_Strasse_final.glb"
+      ios-src="Coin_Strasse_final.usdz"
+      alt="Coin Strasse final"
+      ar
+      autoplay
+      auto-rotate
+      camera-controls
+      camera-orbit="0deg 90deg 1m"
+      field-of-view="30deg"
+      environment-image="neutral">
+    </model-viewer>
 
-  <!-- Drittes Modell -->
-  <model-viewer 
-    src="BunkerCoins_final.glb"
-    ios-src="BunkerCoins_final.usdz"
-    alt="Bunker Coins final"
-    ar
-    autoplay
-    auto-rotate
-    camera-controls
-    camera-orbit="0deg 90deg 1m"
-    field-of-view="30deg"
-    environment-image="neutral">
-  </model-viewer>
+    <!-- Drittes Modell -->
+    <model-viewer 
+      src="BunkerCoins_final.glb"
+      ios-src="BunkerCoins_final.usdz"
+      alt="Bunker Coins final"
+      ar
+      autoplay
+      auto-rotate
+      camera-controls
+      camera-orbit="0deg 90deg 1m"
+      field-of-view="30deg"
+      environment-image="neutral">
+    </model-viewer>
 
-  <!-- Viertes Modell -->
-  <model-viewer 
-    src="Coin_Kreis_final.glb"
-    ios-src="Coin_Kreis_final.usdz"
-    alt="Coin Kreis final"
-    ar
-    autoplay
-    auto-rotate
-    camera-controls
-    camera-orbit="0deg 90deg 1m"
-    field-of-view="30deg"
-    environment-image="neutral">
-  </model-viewer>
+    <!-- Viertes Modell -->
+    <model-viewer 
+      src="Coin_Kreis_final.glb"
+      ios-src="Coin_Kreis_final.usdz"
+      alt="Coin Kreis final"
+      ar
+      autoplay
+      auto-rotate
+      camera-controls
+      camera-orbit="0deg 90deg 1m"
+      field-of-view="30deg"
+      environment-image="neutral">
+    </model-viewer>
+  </div>
 
   <p>
-    Stacks on Stacks on Stacks on Stacks...
+    Virtuelle Goldmünzen, erweitern die neue Dachgartenfläche des Hamburger Feldstraßenbunkers. In Anlehnung an Videospiel-Ästhetik wird sichtbar gemacht, wie öffentlicher Raum immer stärker zum Spielfeld von Investoren und Kreativagenturen wird.
   </p>
 </body>
 </html>
