@@ -5,21 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bunker Coins</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
 
     body {
-      /* Betonfarbener Hintergrund */
-      background-color: #b0b0b0; /* einfaches Beton-Grau */
+      /* Hintergrundbild + Fallback-Farbe */
+      background-color: #b0b0b0; /* Fallback Grau */
+      background-image: url(Bunker5.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
+      /* Dunkel-Filter optional */
+      position: relative;
       margin: 0;
+      min-height: 100vh;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 100vh;
-      padding: 20px;
     }
+
+    /* Dunkler Overlay (optional) */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2); /* Schwarz mit 20% Deckkraft */
+      z-index: 0;
+    }
+
+    h2, p, model-viewer {
+      position: relative; /* damit alles über dem Overlay sichtbar bleibt */
+      z-index: 1;
+    }
+
     h2 {
       text-align: center;
       font-family: Arial, sans-serif;
@@ -29,12 +54,14 @@
       margin-top: 50px;
       margin-bottom: 20px;
     }
+
     model-viewer {
       display: block;
       margin: 20px auto;
-      width: 40vw; /* kleiner gemacht */
-      height: 40vh; /* kleiner gemacht */
+      width: 40vw; 
+      height: 40vh;
     }
+
     p {
       text-align: center;
       font-family: 'Arial', sans-serif;
