@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bunker Coins</title>
+  <title>Level Up ?</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
@@ -11,7 +11,7 @@
 
     body {
       background-color: #b0b0b0;
-      background-image: url(Beton);
+      background-image: url(Beton.jpg);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -22,7 +22,7 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* damit Titel links bleibt */
+      align-items: flex-start;
       justify-content: flex-start;
     }
 
@@ -37,26 +37,27 @@
       z-index: 0;
     }
 
-    h2, p, model-viewer {
+    h2, p, .models-container {
       position: relative;
       z-index: 1;
     }
 
     h2 {
-      text-align: left; /* linksbündig */
+      text-align: left;
       font-family: Arial, sans-serif;
       color: black;
       font-weight: bold;
-      font-size: 3em; /* größer gemacht */
-      margin: 20px 0 40px 20px; /* oben, rechts, unten, links */
+      font-size: 3em;
+      margin: 20px 0 40px 20px;
     }
 
     .models-container {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* damit die Modelle auch linksbündig starten */
-      padding-left: 100px; /* Abstand von links (verschiebt alles nach rechts) */
+      align-items: flex-end; /* <-- Modelle nach rechts ausrichten */
       width: 100%;
+      padding-right: 100px; /* Abstand von rechts */
+      box-sizing: border-box;
     }
 
     model-viewer {
@@ -72,7 +73,7 @@
       font-size: 1.2em;
       color: black;
       max-width: 800px;
-      margin: 40px auto 0 auto; /* zentriert */
+      margin: 40px auto 0 auto;
     }
   </style>
 </head>
@@ -139,7 +140,7 @@
   </div>
 
   <p>
-    Virtuelle Goldmünzen, erweitern die neue Dachgartenfläche des Hamburger Feldstraßenbunkers. In Anlehnung an Videospiel-Ästhetik wird sichtbar gemacht, wie öffentlicher Raum immer stärker zum Spielfeld von Investoren und Kreativagenturen wird.
+    Stacks on Stacks on Stacks on Stacks...
   </p>
 </body>
 </html>
